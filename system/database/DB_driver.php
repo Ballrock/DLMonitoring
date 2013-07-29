@@ -1025,6 +1025,13 @@ class CI_DB_driver {
 			}
 		}
 	}
+        
+        function invoke_function($func_name) {
+            $reflectionMethod = new ReflectionMethod(get_class($this), $func_name);
+            $args = func_get_args();
+            array_shift($args);
+            $reflectionMethod->invoke($this, $args);
+        }
 
 	// --------------------------------------------------------------------
 

@@ -1,0 +1,13 @@
+{
+    "name": "vendor/d-l-monitoring",
+    "description": "Description of project DLMonitoring.",
+    "authors": [
+        {
+            "name": "Nebulis",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "dready92/php-on-couch": "1.0.1-p2"
+    }
+}
