@@ -17,8 +17,12 @@
         <script src="/views/js/bootstrap.min.js"></script>
         <link href="/views/css/bootstrap-combined.min.css" rel="stylesheet">
         -->
+        
+        <!-- AngularJS -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        
         <!-- Latest compiled and minified CSS -->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/amelia/bootstrap.min.css" rel="stylesheet">
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
@@ -29,7 +33,7 @@
 </head>
 <body>
     <!-- Barre de navigation -->
-    <div class="navbar navbar navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -37,7 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">DLMonitor</a>
+          <a class="navbar-brand" href="#" style="font-family: 'Cabin',Arial,sans-serif;">DLMonitor</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -46,18 +50,12 @@
             <li><a href="#config">Configuration</a></li>
           </ul>
           <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Mot de passe" class="form-control">
-            </div>
             <button type="submit" class="btn">Connexion</button>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
-    <div class="container" style="margin-top: 70px;">     
+    <div class="container" style="margin-top: 80px;">     
         <?php echo $body ?>   
     </div> <!-- /container -->
     <div class="container">
