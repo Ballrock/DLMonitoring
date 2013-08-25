@@ -18,18 +18,25 @@
         <link href="/views/css/bootstrap-combined.min.css" rel="stylesheet">
         -->
         
-        <!-- AngularJS -->
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-        
-        <!-- Latest compiled and minified CSS -->
-        <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/amelia/bootstrap.min.css" rel="stylesheet">
+        <!-- AngularJS 
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script> -->
+        <!-- JQuery -->
+         <script src="//codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+         
+       <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css" rel="stylesheet">
 
         <!-- Latest compiled and minified JavaScript -->
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
-        <!-- Latest Glyphicons minified CSS -->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" rel="stylesheet">
-        <style type="text/css"></style>
+        <style type="text/css">
+            body {
+                padding-top: 50px;
+            }
+        </style>
 </head>
 <body>
     <!-- Barre de navigation -->
@@ -41,12 +48,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" style="font-family: 'Cabin',Arial,sans-serif;">DLMonitor</a>
+          <a class="navbar-brand" href="/" style="font-family: 'Cabin',Arial,sans-serif;">DLMonitor</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Accueil</a></li>
-            <li><a href="#biblio">Bibliothéque</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Médias
+                <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">À voir</a></li>
+                  <li><a href="#">Critiques</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Bibliothèque</li>
+                  <li><a href="/newsbiblio">Tableau de bord</a></li>
+                  <li><a href="/biblio">Contenus</a></li>
+                </ul>
+              </li>
             <li><a href="#config">Configuration</a></li>
           </ul>
           <form class="navbar-form navbar-right">
@@ -55,14 +72,14 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
-    <div class="container" style="margin-top: 80px;">     
-        <?php echo $body ?>   
-    </div> <!-- /container -->
-    <div class="container">
-        <hr>
-        <footer>
-            <p>2013 - DLMonitor.</p>
-        </footer>
-    </div> <!-- /container -->
+    <?php echo $body ?>   
+    <footer>
+        <div class="container">
+            <hr />
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2013 DLMonitor &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </div> <!-- /container -->
+    </footer>
+   
 </body>
 </html>
