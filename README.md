@@ -5,5 +5,6 @@ Cette application permet de gérer une bibliothéque de films et de séries mais
 
 Utile
 --------
-* A voir pour Angular JS : 
-http://data-prez.appspot.com/deck/id=agtzfmRhdGEtcHJlenIRCxIJU2xpZGVEZWNrGPvJBAw&slide=0
+A voir pour Angular JS : 
+* http://data-prez.appspot.com/deck/id=agtzfmRhdGEtcHJlenIRCxIJU2xpZGVEZWNrGPvJBAw&slide=0
+* http://docs.angularjs.org/cookbook/
