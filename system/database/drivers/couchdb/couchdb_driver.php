@@ -32,31 +32,6 @@ class CI_DB_couchdb_driver extends CI_DB {
 
 	var $dbdriver = 'couchdb';
 
-	// The character used for escaping
-	var $_escape_char = '';
-
-	// clause and character used for LIKE escape sequences - not used in MySQL
-	var $_like_escape_str = '';
-	var $_like_escape_chr = '';
-
-	/**
-	 * Whether to use the MySQL "delete hack" which allows the number
-	 * of affected rows to be shown. Uses a preg_replace when enabled,
-	 * adding a bit more processing to all queries.
-	 */
-	var $delete_hack = TRUE;
-
-	/**
-	 * The syntax to count rows is slightly different across different
-	 * database engines, so this string appears in each driver and is
-	 * used for the count_all() and count_all_results() functions.
-	 */
-	var $_count_string = 'SELECT COUNT(*) AS ';
-	var $_random_keyword = ' RAND()'; // database specific random keyword
-
-	// whether SET NAMES must be used to set the character set
-	var $use_set_names;
-
 	// --------------------------------------------------------------------
 
 	/**
@@ -68,7 +43,6 @@ class CI_DB_couchdb_driver extends CI_DB {
 	function db_pconnect()
 	{
             return new couchClient('http://'.$this->hostname.':'.$this->port.'/',$this->database);
-            
 	}
         
 	// --------------------------------------------------------------------
@@ -96,8 +70,26 @@ class CI_DB_couchdb_driver extends CI_DB {
             return true;
 	}
         
-        function test($a){
-            var_dump($a);
+        /**
+         * 
+         * @return l'ensemble des documents de la bdd
+         */
+        function get_all(){
+            return $this->conn_id->include_docs(true)->getAlldocs();
+        }
+        
+        /**
+         * @param $datas contient l'id du document a retourner
+         * @return le document s'il existe, false sinon
+         */
+        function get($datas){
+            try {
+                $doc = $this->conn_id->getDoc($datas[0]);
+                return $doc;
+            } catch ( Exception $e ) {
+                log_message("error", $e);
+                return false;
+            }
         }
        
 	/**
@@ -111,6 +103,66 @@ class CI_DB_couchdb_driver extends CI_DB {
 	{
             $conn_id = null;
 	}
+        
+        /**
+         * Mise à jour des donnees
+         * @param $datas les donnees a inserer en bdd
+         * @return boolean true si la mise a jour
+         * a ete effectue avec succes, false sinon
+         */
+        function update($datas) {
+            $doc = $this->get(array($datas[0]->id));
+            if ($doc === false) {
+                return false;
+            }
+            foreach($datas[0] as $cle => $valeur) {
+                if( $cle !== 'id') {
+                    $doc->$cle = empty($valeur) ? null : $valeur;
+                }
+            }
+            try {
+                $this->conn_id->storeDoc($doc);
+            } catch (Exception $e) {
+                log_message("error", $e);
+                return false;
+            }
+            return $doc;
+        }
+        
+        /**
+         * Insertion des donnees
+         * @param $datas les donnees a inserer en bdd
+         * @return boolean true si l'a mise a jour l'insertion
+         * a ete effectue avec succes, false sinon
+         */
+        function insert($datas) {
+            $doc = new couchDocument($this->conn_id);
+            foreach($datas[0] as $cle => $valeur) {
+                if( $cle !== 'id') {
+                    $doc->$cle = empty($valeur) ? null : $valeur;
+                }
+            }
+            return $doc;
+        }
+        
+        /**
+         * @param $datas contient l'id du document a retourner
+         * @return true si la suppression réussit, false sinon
+         */
+        function delete($datas){
+            try {
+                $doc = $this->conn_id->getDoc($datas[0]);
+                print_r($doc);
+                if($doc === false){
+                    return false;
+                }
+                $this->conn_id->deleteDoc($doc);
+                return true;
+            } catch ( Exception $e ) {
+                log_message("error", $e);
+                return false;
+            }
+        }
 }
 
 
