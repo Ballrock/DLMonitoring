@@ -4,6 +4,9 @@
  *
  * @author Antoine 'Ballrock' Précigout
  */
-
-echo 'PAGE 404 !';
 ?>
+
+<div class="jumbotron">
+    <h1>DLMonitor</h1>
+    <p>Page non disponible</p>
+</div>

@@ -1,15 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * Controlleur Accueil
+ * Controlleur Biblio
  *
  * @author Antoine 'Ballrock' Précigout
  */
-class Accueil extends CI_Controller {
+class NewsBiblio extends CI_Controller {
 
 	
 	public function index()
 	{
 		$this->load->library('layout');
-                $this->layout->afficher('accueil_view');
+                $this->layout->afficher('news_biblio_view');
 	}
 }
+
