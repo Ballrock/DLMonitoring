@@ -18,25 +18,24 @@
         <link href="/views/css/bootstrap-combined.min.css" rel="stylesheet">
         -->
         
-        <!-- AngularJS 
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script> -->
+        <!-- AngularJS -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+		
         <!-- JQuery -->
          <script src="//codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
          
-       <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
 
         <!-- Optional theme -->
-        <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css" rel="stylesheet" />
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
-        <style type="text/css">
-            body {
-                padding-top: 50px;
-            }
-        </style>
+	<script type="text/javascript" src="<?php echo(JS.'controllers/biblio.js'); ?>"></script>
+        
+        <link rel="stylesheet" href="<?php echo(CSS.'style.css'); ?>" />
 </head>
 <body>
     <!-- Barre de navigation -->
@@ -60,8 +59,8 @@
                   <li><a href="#">Critiques</a></li>
                   <li class="divider"></li>
                   <li class="dropdown-header">Bibliothèque</li>
-                  <li><a href="/newsbiblio">Tableau de bord</a></li>
-                  <li><a href="/biblio">Contenus</a></li>
+                  <li><a href="./newsbiblio">Tableau de bord</a></li>
+                  <li><a href="./biblio">Contenus</a></li>
                 </ul>
               </li>
             <li><a href="#config">Configuration</a></li>
