@@ -8,3 +8,4 @@ Utile
 A voir pour Angular JS : 
 * http://data-prez.appspot.com/deck/id=agtzfmRhdGEtcHJlenIRCxIJU2xpZGVEZWNrGPvJBAw&slide=0
 * http://docs.angularjs.org/cookbook/
+* http://jsfiddle.net/SAWsA/11/
