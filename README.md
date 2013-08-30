@@ -10,7 +10,7 @@ A voir pour Angular JS :
 * http://docs.angularjs.org/cookbook/
 * http://jsfiddle.net/SAWsA/11/
 
-
+Transitions :
 * http://codepen.io/chriscoyier/pen/ozlJK
 
 
