@@ -10,7 +10,15 @@ A voir pour Angular JS :
 * http://docs.angularjs.org/cookbook/
 * http://jsfiddle.net/SAWsA/11/
 
+
 Transitions :
 * http://codepen.io/chriscoyier/pen/ozlJK
+
+
+Open Database API (Multilingues) :
+* http://www.themoviedb.org (Films)
+* http://thetvdb.com (Serie)
+ 
+
 
 
